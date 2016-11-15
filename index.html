@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="./compiled/flipclock.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="./compiled/flipclock.js"></script>
+		<script src="js/jquery.countdown.js"></script>
+
     </head>
 
     <body>
@@ -52,13 +54,25 @@
 					<div class="col-md-6 col-md-offset-3">
 
 						<div class="align-center">
-							<i class="fa fa-flask fa-5x mar-bot20"></i>
+							<i class="fa fa-gamepad fa-5x mar-bot20"></i>
 							<h2 class="slogan">DLS ARENA 4</h2>
+							<br/>
+							<div style="background-color:white; border-radius:16px;">
+							    <h2 class="slogan" style="color:#70B9B0;"><div id="getting-started"></div></h2>
+
+                                <script type="text/javascript">
+                                  $("#getting-started")
+                                  .countdown("2017/03/25", function(event) {
+                                    $(this).text(
+                                      event.strftime('%Dj %Hh %Mm %Ss')
+                                    );
+                                  });
+                                </script>
+                                </div>
+							<br/>
 							<p>
 							Événement sur une journée, consacré aux jeux vidéo et au monde vidéoludique,
-							            organisé le Samedi x Mars 2017 de xh à xxh00
-
-
+							            organisé le Samedi 25 Mars 2017 de 9h à 17h30 (heures au pif)
 							</p>
 						</div>
 
