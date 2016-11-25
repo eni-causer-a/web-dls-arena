@@ -26,28 +26,7 @@
 
     <body>
 
-
-		<section id="header" class="appear"></section>
-		<div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
-			 <div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="fa fa-bars color-white"></span>
-					</button>
-					<h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">			DLS ARENA 4
-					</a></h1>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-						<li class="active"><a href="index.html">Accueil</a></li>
-						<li><a href="#section-about">Présentation</a></li>
-						<li><a href="#section-works">Les Jeux</a></li>
-						<li><a href="#section-contact">L'Equipe</a></li>
-                        <li><a href="#section-Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-					</ul>
-				</div><!--/.navbar-collapse -->
-			</div>
-		</div>
+        <?php include('navbar.php'); ?>
 
 		<section class="featured">
 			<div class="container">
@@ -207,30 +186,7 @@
 		</section>
 		<!-- /about -->
 
-	<section id="footer" class="section footer">
-		<div class="container">
-			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
-				<div class="col-sm-12 align-center">
-                    <ul class="social-network social-circle">
-
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-
-                    </ul>
-				</div>
-			</div>
-
-			<div class="row align-center copyright">
-					<div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstrap Themes</a></p></div>
-                <div class="col-sm-12"><p><a href="./mentions-legales.html">Mentions légales</a></p></div>
-                    <!--
-                        All links in the footer should remain intact.
-                        Licenseing information is available at: http://bootstraptaste.com/license/
-                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Amoeba
-                    -->
-			</div>
-		</div>
-
-	</section>
+        <?php include('footer.php'); ?>
 	<section id ="clock">
 
 
