@@ -152,7 +152,7 @@
 					<div class="row align-center mar-bot40">
 						<div class="col-md-4">
 							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/member1.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="img/team/member1.jpg" alt="" height="200px"/></figure>
 								<div class="team-detail">
 									<h4>Arthur.H</h4>
 									<span>Assistant chef de projet</span>
@@ -161,7 +161,7 @@
 						</div>
 						<div class="col-md-4">
 							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/memberSamuel.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="img/team/memberSamuel.jpg" alt="" height="200px"/></figure>
 								<div class="team-detail">
 									<h4>Samuel.B</h4>
 									<span>Chef de projet général</span>
@@ -170,7 +170,7 @@
 						</div>
 						<div class="col-md-4">
 							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/member3.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="img/team/member-amaury.png" alt="" height="200px"/></figure>
 								<div class="team-detail">
 								<h4>Amaury.C</h4>
 									<span>Chef de projet web</span>
@@ -183,7 +183,7 @@
 					<div class="row align-center mar-bot40">
 						<div class="col-md-4">
 							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/member1.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="img/team/member-flobius.png" alt="" height="200px"/></figure>
 								<div class="team-detail">
 									<h4>Florian.D</h4>
 									<span>Développeur front-end</span>
@@ -192,7 +192,7 @@
 						</div>
 						<div class="col-md-4">
 							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/member2.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="img/team/member-mathieu.png" alt="" height="200px"/></figure>
 								<div class="team-detail">
 									<h4>Mathieu.L</h4>
 									<span>Administrateur de bases de données</span>
@@ -201,7 +201,7 @@
 						</div>
 						<div class="col-md-4">
 							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/member3.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="img/team/member-killian.jpg" alt="" height="200px"/></figure>
 								<div class="team-detail">
 								<h4>Killian.L</h4>
 									<span>Développeur back-end</span>
