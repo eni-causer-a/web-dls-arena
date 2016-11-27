@@ -103,7 +103,7 @@
 			<div class="row mar-bot40">
 				<div class="col-lg-6" >
 					<div class="align-center">
-						  <ul><li><img src="./img/csgologo.jpg"/></li>
+						  <ul><li><img src="./img/FifaLogo.jpg"/></li>
                               <br/>
 						  <li><p></p></li>
                             <li></li>
@@ -116,7 +116,7 @@
 
 				<div class="col-lg-6" >
 					<div class="align-center">
-						  <ul><li><img src="./img/csgologo.jpg"/></li>
+						  <ul><li><img src="./img/league-of-legends-logo.jpg"/></li>
                               <br/>
 						  <li><p></p></li>
                             <li></li>
