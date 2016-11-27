@@ -105,7 +105,7 @@
 					<div class="align-center">
 						  <ul><li><img src="./img/FifaLogo.jpg"/></li>
                               <br/>
-						  <li><p></p></li>
+						  <li><p>FIFA est un jeux de football</p></li>
                             <li></li>
                             <li></li> <!--//mettre en dynamique -->
                             <li></li> <!-- //Bouton -->
