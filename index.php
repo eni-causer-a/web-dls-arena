@@ -72,28 +72,58 @@
 				<div class="col-lg-6" >
 					<div class="align-center">
 
-						  <ul><li><img src="./img/csgologo.jpg"/></li></br>
-						  <li><p>Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d'équipe.</li>
-
+						  <ul><li><img src="./img/csgologo.jpg"/></li>
+                              <br/>
+						  <li><p>Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d'équipe.</p></li>
                             <li>Nombre de joueurs par équipe: 1</li>
                             <li>Nombre d'équipes maximum: 5/32 </li> <!--//mettre en dynamique -->
                             <li>L'arbre du tournoi</li> <!-- //Bouton -->
                             <li>Inscription</li> <!-- //Bouton -->
                         </ul>
-						</p>
+
 					</div>
 				</div>
 
 				<div class="col-lg-6" >
 					<div class="align-center">
-                        <ul><li><img src="img/battleriteLogo.png"></img></li></br>
-                            <li><p>BATTLERITE est un jeu de combat par équipe dans une arène ce jouant à deux contre deux.</li>
+                        <ul><li><img src="img/battleriteLogo.png" /></li>
+                            <br/>
+                            <li><p>BATTLERITE est un jeu de combat par équipe dans une arène ce jouant à deux contre deux.</p></li>
                             <li>Nombre de joueurs par équipe: 2</li>
                             <li>Nombre d'équipes maximum: 2/16 </li> <!--mettre en dynamique -->
                             <li>L'arbre du tournoi</li>
                             <li>Inscription</li>
                         </ul>
-						</p>
+
+					</div>
+				</div>
+
+
+			</div>
+			<div class="row mar-bot40">
+				<div class="col-lg-6" >
+					<div class="align-center">
+						  <ul><li><img src="./img/csgologo.jpg"/></li>
+                              <br/>
+						  <li><p></p></li>
+                            <li></li>
+                            <li></li> <!--//mettre en dynamique -->
+                            <li></li> <!-- //Bouton -->
+                            <li></li> <!-- //Bouton -->
+                        </ul>
+					</div>
+				</div>
+
+				<div class="col-lg-6" >
+					<div class="align-center">
+						  <ul><li><img src="./img/csgologo.jpg"/></li>
+                              <br/>
+						  <li><p></p></li>
+                            <li></li>
+                            <li></li> <!--//mettre en dynamique -->
+                            <li></li> <!-- //Bouton -->
+                            <li></li> <!-- //Bouton -->
+                        </ul>
 					</div>
 				</div>
 
