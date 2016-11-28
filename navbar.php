@@ -10,10 +10,10 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-						<li class="active"><a href="index.html">Accueil</a></li>
-						<li><a href="#section-about">Présentation</a></li>
-						<li><a href="#section-works">Les Jeux</a></li>
-						<li><a href="#section-contact">L'Equipe</a></li>
+						<li class="active"><a href="index.php">Accueil</a></li>
+						<li><a href="#featured">Présentation</a></li>
+						<li><a href="#section-services">Les Jeux</a></li>
+						<li><a href="#section-about">L'Equipe</a></li>
                         <li><a href="#section-Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
 					</ul>
 				</div><!--/.navbar-collapse -->
