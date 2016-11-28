@@ -11,19 +11,26 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
 						<li class="active"></li>
-						<li><?php
-                            if ($_SERVER['PHP_SELF']=="/dls/index.php")
-                            {
-                                echo'<a href="#featured">Accueil</a>';
+						<?php
+                            if ($_SERVER['PHP_SELF']=="/dls/index.php") //si on est sur la page d'index, ce menu est affiché
+                            { ?>
+                            <li><a href="#featured">Accueil</a></li>
+                            <li><a href="#section-services">Les Jeux</a></li>
+						    <li><a href="#section-about">L'Equipe</a></li>
+                            <li><a href="#section-Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                            <?php
                             }
-                            else
-                            {
-                                echo'<a href="index.php">Accueil</a>';
+                            elseif ($_SERVER['PHP_SELF']=="/dls/mentions-legales.php") //menu pour les mentions légales
+                            { ?>
+                            <li><a href="index.php">Retour à l'accueil</a></li>;
+                            <?php
+                            }
+                            else //autre menu (à modifier /!\)
+                            { ?>
+                            <li><a href="index.php">Accueil</a></li>;
+                            <?php
                             };
-                            ?></li>
-						<li><a href="#section-services">Les Jeux</a></li>
-						<li><a href="#section-about">L'Equipe</a></li>
-                        <li><a href="#section-Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                            ?>
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
