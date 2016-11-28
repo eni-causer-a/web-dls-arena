@@ -71,31 +71,26 @@
 			<div class="row mar-bot40">
 				<div class="col-lg-6" >
 					<div class="align-center">
-
-						  <ul><li><img src="./img/csgologo.jpg"/></li>
-                              <br/>
-						  <li><p>Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d'équipe.</p></li>
-                            <li>Nombre de joueurs par équipe: 1</li>
-                            <li>Nombre d'équipes maximum: 5/32 </li> <!--//mettre en dynamique -->
-                            <li>L'arbre du tournoi</li> <!-- //Bouton -->
-                            <li>Inscription</li> <!-- //Bouton -->
-                        </ul>
-
+				            <img src="./img/csgologo.jpg" height="65px"/>
+                            <br/>
+				            <p>Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d'équipe.</p>
+                            Nombre de joueurs par équipe: 1<br/>
+                            Nombre d'équipes maximum: 5/32 <br/> <!--//mettre en dynamique -->
+                            L'arbre du tournoi<br/> <!-- //Bouton -->
+                            Inscription<br/> <!-- //Bouton -->
 					</div>
 				</div>
 
 				<div class="col-lg-6" >
 					<div class="align-center">
-                        <ul><li><img src="img/battleriteLogo.png" /></li>
+                            <img src="img/battleriteLogo.png" height="65px"/>
                             <br/>
-                            <li><p>BATTLERITE est un jeu de combat par équipe dans une arène ce jouant à deux contre deux.</p></li>
-                            <li>Nombre de joueurs par équipe: 2</li>
-                            <li>Nombre d'équipes maximum: 2/16 </li> <!--mettre en dynamique -->
-                            <li>L'arbre du tournoi</li>
-                            <li>Inscription</li>
-                        </ul>
-
-					</div>
+                            <p>BATTLERITE est un jeu de combat par équipe dans une arène ce jouant à deux contre deux.</p>
+                            Nombre de joueurs par équipe: 2<br/>
+                            Nombre d'équipes maximum: 2/16 <br/> <!--mettre en dynamique -->
+                            L'arbre du tournoi<br/>
+                            Inscription<br/>
+                    </div>
 				</div>
 
 
@@ -103,28 +98,26 @@
 			<div class="row mar-bot40">
 				<div class="col-lg-6" >
 					<div class="align-center">
-						  <ul><li><img src="./img/FifaLogo.jpg"/></li>
-                              <br/>
-						  <li><p>FIFA est un jeu de simulation de football édité par Electronic Arts</p></li>
-                            <li>Nombre de joueurs par équipe: 1</li>
-                            <li>Nombre d'équipes maximum: X/4</li> <!--//mettre en dynamique -->
-                            <li>L'arbre du tournoi</li> <!-- //Bouton -->
-                            <li>Inscription</li> <!-- //Bouton -->
-                        </ul>
+                            <img src="./img/FifaLogo.jpg" height="65px"/>
+                            <br/>
+                            <p>FIFA est un jeu de simulation de football édité par Electronic Arts</p>
+                            Nombre de joueurs par équipe: 1<br/>
+                            Nombre d'équipes maximum: X/4<br/> <!--//mettre en dynamique -->
+                            L'arbre du tournoi<br/> <!-- //Bouton -->
+                            Inscription<br/> <!-- //Bouton -->
 					</div>
 				</div>
 
 				<div class="col-lg-6" >
 					<div class="align-center">
-						  <ul><li><img src="./img/league-of-legends-logo.jpg"/></li>
-                              <br/>
-						  <li><p>League of Legends est un MOBAs.
-                              Le jeu se décompose en sessions, avec deux équipes qui s'affrontent par le biais de champions</p></li>
-                            <li>Nombre de joueurs par équipe: 5</li>
-                            <li>Nombre d'équipes maximum: X /4 </li> <!--//mettre en dynamique -->
-                            <li>L'arbre du tournoi</li> <!-- //Bouton -->
-                            <li>Inscription</li> <!-- //Bouton -->
-                        </ul>
+                            <img src="./img/league-of-legends-logo.jpg" height="65px"/>
+                            <br/>
+                            <p>League of Legends est un MOBA.
+                            Le jeu se décompose en sessions, avec deux équipes qui s'affrontent par le biais de champions</p>
+                            Nombre de joueurs par équipe: 5<br/>
+                            Nombre d'équipes maximum: X /4 <br/> <!--//mettre en dynamique -->
+                            L'arbre du tournoi<br/> <!-- //Bouton -->
+                            Inscription<br/> <!-- //Bouton -->
 					</div>
 				</div>
 
