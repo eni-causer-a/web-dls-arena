@@ -27,30 +27,12 @@
     <body>
 
 
-		<section id="header" class="appear"></section>
-		<div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
-			 <div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="fa fa-bars color-white"></span>
-					</button>
-					<h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">			DLS ARENA 4
-					</a></h1>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-						<li class="active"><a href="index.html">Retour à l'accueil</a></li>
-					</ul>
-				</div><!--/.navbar-collapse -->
-			</div>
-		</div>
+        <?php include('navbar.php'); ?>
 
-		<section class="featured">
-			<div class="align-center">
-							<i class="fa fa-code fa-5x mar-bot20"></i>
-<h2 class="slogan">Mentions légales</h2>
-						</div>
-		</section>
+<section class="featured">
+    <div class="align-center"> <i class="fa fa-code fa-5x mar-bot20"></i>
+        <h2 class="slogan">Mentions légales</h2> </div>
+</section>
 
 		<!-- services -->
 
