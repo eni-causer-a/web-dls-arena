@@ -107,7 +107,7 @@
                               <br/>
 						  <li><p>FIFA est un jeux de football</p></li>
                             <li>Nombre de joueurs par équipe: 1</li>
-                            <li>Nombre d'équipes maximum: X/8</li> <!--//mettre en dynamique -->
+                            <li>Nombre d'équipes maximum: X/4</li> <!--//mettre en dynamique -->
                             <li>L'arbre du tournoi</li> <!-- //Bouton -->
                             <li>Inscription</li> <!-- //Bouton -->
                         </ul>
@@ -118,8 +118,8 @@
 					<div class="align-center">
 						  <ul><li><img src="./img/league-of-legends-logo.jpg"/></li>
                               <br/>
-						  <li><p>League of Legends est un jeu appartenant à la branche des MOBAs.
-                              Le jeu se décompose en sessions, avec deux équipes qui s'affrontent par le biais de champions invoqués par les joueurs, lesquels incarnent des invocateurs</p></li>
+						  <li><p>League of Legends est un MOBAs.
+                              Le jeu se décompose en sessions, avec deux équipes qui s'affrontent par le biais de champions</p></li>
                             <li>Nombre de joueurs par équipe: 5</li>
                             <li>Nombre d'équipes maximum: X /4 </li> <!--//mettre en dynamique -->
                             <li>L'arbre du tournoi</li> <!-- //Bouton -->
