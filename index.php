@@ -50,9 +50,9 @@
                                 </script>
                                 </div>
 							<br/>
-							<p>
+							<p style="font-weight: 300;font-size:20px;">
 							Évènement sur une journée, consacré aux jeux vidéo et au monde vidéoludique,
-							            organisé le Samedi 25 Mars 2017 de 9h à 17h30 (heure provisoire?)
+							            organisé le Samedi 25 Mars 2017 de 9h à 17h30
 							</p>
 						</div>
 
