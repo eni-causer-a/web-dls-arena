@@ -12,7 +12,10 @@
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
 						<li class="active"></li>
 						<?php
-                            if ($_SERVER['PHP_SELF']=="/dls/index.php") //si on est sur la page d'index, ce menu est affiché
+                            $page_actuelle=explode("/",$_SERVER['PHP_SELF']);
+                            $page_actuelle=array_reverse($page_actuelle);
+
+                            if ($page_actuelle[0]=="index.php") //si on est sur la page d'index, ce menu est affiché
                             { ?>
                             <li><a href="#featured">Accueil</a></li>
                             <li><a href="#section-services">Les Jeux</a></li>
@@ -20,7 +23,7 @@
                             <li><a href="#section-Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
                             <?php
                             }
-                            elseif ($_SERVER['PHP_SELF']=="/dls/mentions-legales.php") //menu pour les mentions légales
+                            elseif ($page_actuelle[0]=="/dls/mentions-legales.php") //menu pour les mentions légales
                             { ?>
                             <li><a href="index.php">Retour à l'accueil</a></li>;
                             <?php

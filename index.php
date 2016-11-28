@@ -154,7 +154,11 @@
                                 <input id="appendedtext" name="appendedtext" class="form-control" placeholder="Jeux, idées" type="text">
                                 <span class="input-group-addon">Valider</span>
                             </div>
-
+                            <br/>
+                            <div><p style="font-style:italic;">Afin de limiter des abus, votre adresse IP sera stockée.</p></div>
+                            <?php
+                            // A faire /!\
+                            ?>
                         </div>
                     </div>
                 </fieldset>
