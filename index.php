@@ -140,6 +140,27 @@
 
 			</div>
 
+                <form class="form-horizontal">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Boite à idées :</legend>
+
+                    <!-- Appended Input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="appendedtext">Propositions :</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="appendedtext" name="appendedtext" class="form-control" placeholder="Jeux, idées" type="text">
+                                <span class="input-group-addon">Valider</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+
 		</div>
 		</section>
 
