@@ -75,7 +75,7 @@
                             <br/>
 				            <p>Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d'équipe.</p>
                             Nombre de joueurs par équipe: 1<br/>
-                            Nombre d'équipes maximum: 5/32<br/> <!--//mettre en dynamique -->
+
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
                         <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
@@ -91,7 +91,7 @@
                             <br/>
                             <p>BATTLERITE est un jeu de combat par équipe dans une arène ce jouant à deux contre deux.</p>
                             Nombre de joueurs par équipe: 2<br/>
-                            Nombre d'équipes maximum: 2/16 <br/> <!--//mettre en dynamique -->
+
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
                         <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
@@ -110,7 +110,8 @@
                             <br/>
                             <p>FIFA est un jeu de simulation de football édité par Electronic Arts</p>
                             Nombre de joueurs par équipe: 1<br/>
-                            Nombre d'équipes maximum: X/4<br/> <!--//mettre en dynamique -->
+
+                            <br/>
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
                         <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
@@ -127,7 +128,7 @@
                             <p>League of Legends est un MOBA.
                             Le jeu se décompose en sessions, avec deux équipes qui s'affrontent par le biais de champions</p>
                             Nombre de joueurs par équipe: 5<br/>
-                            Nombre d'équipes maximum: X /4 <br/> <!--//mettre en dynamique -->
+
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
                         <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
@@ -155,7 +156,7 @@
                                 <span class="input-group-addon">Valider</span>
                             </div>
                             <br/>
-                            <div><p style="font-style:italic;">Afin de limiter des abus, votre adresse IP sera stockée.</p></div>
+
                             <?php
                             // A faire /!\
                             ?>
