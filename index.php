@@ -105,7 +105,7 @@
 					<div class="align-center">
 						  <ul><li><img src="./img/FifaLogo.jpg"/></li>
                               <br/>
-						  <li><p>FIFA est un jeux de football</p></li>
+						  <li><p>FIFA est un jeu de simulation de football édité par Electronic Arts</p></li>
                             <li>Nombre de joueurs par équipe: 1</li>
                             <li>Nombre d'équipes maximum: X/4</li> <!--//mettre en dynamique -->
                             <li>L'arbre du tournoi</li> <!-- //Bouton -->
