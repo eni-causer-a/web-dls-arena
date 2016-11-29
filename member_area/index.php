@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 	<!-- BASICS -->
         <meta charset="utf-8">
@@ -22,26 +25,45 @@
 </head>
 
 <body>
-<table>
-    <td>
-	<div id=contenu>
-		<h2>Connexion</h2>
-		<?php include ('login.php'); ?>
-	</div>
+    <?php include("../navbar.php"); ?>
 
-	<section align=right>
-	<footer>
-		<ul>
-		<a class="btn3"  href="../index.php">Retour</a>
-		</ul>
-	</footer>
-	</section>
-	</td>
-	    <!-- INSCRIPTION -->
-	<td>
+    <section class="featured" id="featured">
+			<div class="container">
+			    <!-- Titre DLS -->
+				<div class="row mar-bot40">
+					<div class="col-md-6 col-md-offset-3">
 
+						<div class="align-center">
+							<i class="fa fa-gamepad fa-5x mar-bot20"></i>
+							<h2 class="slogan">DLS ARENA 4</h2>
+							<br/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-	</td>
-</table>
+        <section id="section-services" class="section pad-bot30 bg-white">
+            <div class="container">
+                <div class="row mar-bot40">
+                   <!-- Login -->
+                    <div class="col-lg-6" >
+                        <div class="align-center">
+                           <h2>Connexion</h2>
+                           <?php include ('login.php'); ?>
+                        </div>
+                    </div>
+                    <!-- Inscription -->
+                    <div class="col-lg-6" >
+                        <div class="align-center">
+                           <h2>Inscription</h2>
+                           <?php include ('register.php'); ?>
+                        </div>
+                    </div>
+
+                </div>
+           </div>
+        </section>
+    <?php include("../footer.php"); ?>
 </body>
 </html>
