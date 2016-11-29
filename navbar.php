@@ -20,7 +20,7 @@
                             <li><a href="#featured">Accueil</a></li>
                             <li><a href="#section-services">Les Jeux</a></li>
 						    <li><a href="#section-about">L'Equipe</a></li>
-                            <li><a title="Ouverture le 5/12" disabled="disabled" style="cursor:default;"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                            <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
                             <?php
                             }
                             elseif ($page_actuelle[0]=="/dls/mentions-legales.php") //menu pour les mentions légales
