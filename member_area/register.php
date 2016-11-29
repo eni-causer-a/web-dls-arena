@@ -32,6 +32,8 @@ if (isset ($_GET['action'])) {
 			$_SESSION['connect'] = $mdp == sha1($_POST['password']);
 			$_SESSION['id'] = $_POST['ident'];
         }
+    }
+}
 
 			?>
     <html>
