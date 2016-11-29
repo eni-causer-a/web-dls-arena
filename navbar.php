@@ -41,8 +41,29 @@
                                     <li><a href="#featured">Accueil</a></li>
                                     <li><a href="#section-services">Les Jeux</a></li>
                                     <li><a href="#section-about">L'Equipe</a></li>
-                                    <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+
                                 <?php
+                                    if (isset($_SESSION['connect']))
+                                    {
+                                        if($_SESSION['connect']==true) // si l'utilisateur est connecté
+                                        { ?>
+                                    <li><a href="member_area/index.php"> Espace Membre</a></li>
+                                    <li><a href="deconnexion.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li>
+                                    <?php
+                                        }
+                                        else // si on a une erreur
+                                        {
+                                            session_destroy();
+                                            header('Location: index.php');
+                                            exit();
+                                        }
+                                    }
+                                    else // si l'utilisateur est déconnecté
+                                    { ?>
+                                    <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                                       <?php
+                                    }
+
                                 }
                                 elseif ($page_actuelle[0]=="/dls/mentions-legales.php") //menu pour les mentions légales
                                 { ?>
