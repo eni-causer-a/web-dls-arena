@@ -25,10 +25,10 @@
 
                                     <?php
                                 }
-                                else //si on est ailleurs, à faire
+                                else //si on est dans la partie admin de l'espace membre (gestion des équipes, modifier son profil...)
                                 { ?>
                                     <li><a href="../index.php">Retour à l'Accueil</a></li>
-                                    <li><a href=""><!-- Dans le a href -> lien pour se déconnecter --><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li>
+                                    <li><a href="../deconnexion.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li>
 
                                 <?php
                                 }
