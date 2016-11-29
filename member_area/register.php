@@ -42,12 +42,9 @@ if (isset ($_GET['action'])) {
     <body>
     </body>
 
-    </html>
-    <?php
-		}
-	}
 
-	elseif ( $_GET['action']
+
+
 	<form method="post" target="page" action="login.php?action=connexion">
 		<table>
 			<tr>
@@ -98,3 +95,4 @@ if (isset ($_GET['action'])) {
 			</tr>
 		</table>
 	</form>
+</html>
