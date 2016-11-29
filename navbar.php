@@ -14,25 +14,48 @@
 						<?php
                             $page_actuelle=explode("/",$_SERVER['PHP_SELF']);
                             $page_actuelle=array_reverse($page_actuelle);
+                            $sous_dossier=$page_actuelle[1];
 
-                            if ($page_actuelle[0]=="index.php") //si on est sur la page d'index, ce menu est affiché
-                            { ?>
-                            <li><a href="#featured">Accueil</a></li>
-                            <li><a href="#section-services">Les Jeux</a></li>
-						    <li><a href="#section-about">L'Equipe</a></li>
-                            <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-                            <?php
+                            if ($sous_dossier=="member_area") //si on est dans l'espace membre
+                            {
+                                if ($page_actuelle[0]=="index.php") //si on est sur la page index de l'espace membre (login/inscription)
+                                { ?>
+
+                                <li><a href="../index.php">Retour à l'Accueil</a></li>
+
+                                    <?php
+                                }
+                                else //si on est ailleurs, à faire
+                                { ?>
+                                    <li><a href="../index.php">Retour à l'Accueil</a></li>
+                                    <li><a href=""><!-- Dans le a href -> lien pour se déconnecter --><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li>
+
+                                <?php
+                                }
+
                             }
-                            elseif ($page_actuelle[0]=="/dls/mentions-legales.php") //menu pour les mentions légales
-                            { ?>
-                            <li><a href="index.php">Retour à l'accueil</a></li>;
-                            <?php
+                            else //si on est ailleurs (pour l'instant, s'applique uniquement aux pages du dossier principal)
+                            {
+                                if ($page_actuelle[0]=="index.php") //si on est sur la page d'index, ce menu est affiché
+                                { ?>
+                                    <li><a href="#featured">Accueil</a></li>
+                                    <li><a href="#section-services">Les Jeux</a></li>
+                                    <li><a href="#section-about">L'Equipe</a></li>
+                                    <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                                <?php
+                                }
+                                elseif ($page_actuelle[0]=="/dls/mentions-legales.php") //menu pour les mentions légales
+                                { ?>
+                                    <li><a href="index.php">Retour à l'accueil</a></li>;
+                                <?php
+                                }
+                                else //autre menu (à modifier /!\)
+                                { ?>
+                                    <li><a href="index.php">Accueil</a></li>;
+                                <?php
+                                };
                             }
-                            else //autre menu (à modifier /!\)
-                            { ?>
-                            <li><a href="index.php">Accueil</a></li>;
-                            <?php
-                            };
+
                             ?>
 					</ul>
 				</div><!--/.navbar-collapse -->
