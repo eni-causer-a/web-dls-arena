@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -23,10 +26,7 @@
 		<script src="../js/jquery.countdown.js"></script>
 
 </head>
-
-<body>
     <?php include("../navbar.php"); ?>
-
     <section class="featured" id="featured">
 			<div class="container">
 			    <!-- Titre DLS -->
@@ -42,6 +42,24 @@
 				</div>
 			</div>
 		</section>
+<body>
+<?php
+    if (isset($_SESSION['connect'])) // on vérifie si la session connect existe
+    {
+        if ( $_SESSION['connect'] == true ) // si l'utilisateur est confirmé, on affiche l'espace membre.
+        {
+            header('Location: accueil.php');
+            exit();
+        }
+        else // si on arrive ici, il y a une erreur donc on détruit sa session et on le redirige vers l'index.
+        {
+            session_destroy();
+            header('Location: index.php');
+            exit();
+        }
+    }
+    else //si l'utilisateur n'est pas connecté, on affiche la page login/inscription
+    { ?>
 
         <section id="section-services" class="section pad-bot30 bg-white">
             <div class="container">
@@ -65,5 +83,14 @@
            </div>
         </section>
     <?php include("../footer.php"); ?>
+
+
+    <?php
+    }
+
+
+
+    ?>
+
 </body>
 </html>
