@@ -31,6 +31,9 @@ if (isset ($_GET['action'])) {
 
 			$_SESSION['connect'] = $mdp == sha1($_POST['password']);
 			$_SESSION['id'] = $_POST['ident'];
+        }
+    }
+}
 
 			?>
     <html>
@@ -40,9 +43,6 @@ if (isset ($_GET['action'])) {
     </head>
 
     <body>
-    </body>
-
-
 
 
 	<form method="post" target="page" action="login.php?action=connexion">
@@ -95,4 +95,5 @@ if (isset ($_GET['action'])) {
 			</tr>
 		</table>
 	</form>
+	 </body>
 </html>
