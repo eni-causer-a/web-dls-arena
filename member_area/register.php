@@ -40,7 +40,7 @@ if (isset ($_GET['action'])) {
     </head>
 
     <body>
-    </body>
+
 
 
 
@@ -95,4 +95,5 @@ if (isset ($_GET['action'])) {
 			</tr>
 		</table>
 	</form>
+	 </body>
 </html>
