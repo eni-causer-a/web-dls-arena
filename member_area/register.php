@@ -4,7 +4,7 @@ if (isset ($_GET['action'])) {
 		// après validation des champs
 
 		if ($_POST['password'] != $_POST['repassword'] ) {
-			echo "Mot de passe non identique;
+			echo "Mot de passe non identique";
 			echo "<br />";
 			echo "<a href='index.php'>Retour</a>";
 		}
@@ -19,18 +19,15 @@ if (isset ($_GET['action'])) {
 			include("../include/_inc_parametres.php");
 			include("../include/_inc_connexion.php");
 
-			 $login = $_POST'login'];
-            $password = md5($_POST'password']);
-            $repeatpassword = $_POST'repeatpassword'];
-            $email = $_POST'email'];
-            $infos = $_POST'infos'];
-            if($Auth->register($PDO,$login,$password,$email,$infos)){
-                echo "Inscription termine";
-            }else{
-            echo "Echec lors de votre inscription";
-        }
-    }
-?>
+            $req = $PDO->prepare("INSERT INTO utilisateurs (nom, prenom; pseudo, classe, mdp, email) VALUES (:nom, :prenom, :pseudo, :classe, :mdp, :email)");
+            $req_pre->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':mdp', sha1($_POST['password']) , PDO::PARAM_STR);
+            $req_pre->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
+
+            $req_pre->execute();
 
 			$_SESSION['connect'] = $mdp == sha1($_POST['password']);
 			$_SESSION['id'] = $_POST['ident'];
@@ -67,7 +64,7 @@ if (isset ($_GET['action'])) {
 			</tr>
 			<tr>
 				<td>Classe :</td>
-				<td><select name="cars">
+				<td><select name="classe">
                       <option value="SIO1">SIO1</option>
                       <option value="SIO2">SIO2</option>
                       <option value="ASS1">ASS1</option>
