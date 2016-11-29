@@ -10,10 +10,6 @@ if (isset ($_GET['action'])) {
 		}
 		else
 		{
-
-			session_start();
-
-
 			// include ("menu.php");
 			// connexion à la base de données
 			include("../include/_inc_parametres.php");
@@ -28,23 +24,11 @@ if (isset ($_GET['action'])) {
             $req_pre->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
 
             $req_pre->execute();
-
-			$_SESSION['connect'] = $mdp == sha1($_POST['password']);
-			$_SESSION['id'] = $_POST['ident'];
         }
     }
 }
 
 			?>
-    <html>
-
-    <head>
-        <meta http-equiv="refresh" content="0 ; url=accueil.php">
-    </head>
-
-    <body>
-
-
 	<form method="post" target="page" action="login.php?action=connexion">
 		<table>
 			<tr>
@@ -95,5 +79,3 @@ if (isset ($_GET['action'])) {
 			</tr>
 		</table>
 	</form>
-	 </body>
-</html>
