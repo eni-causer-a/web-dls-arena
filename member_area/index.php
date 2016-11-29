@@ -22,6 +22,8 @@
 </head>
 
 <body>
+<table>
+    <td>
 	<div id=contenu>
 		<h2>Connexion</h2>
 		<?php include ('login.php'); ?>
@@ -34,5 +36,12 @@
 		</ul>
 	</footer>
 	</section>
+	</td>
+	    <!-- INSCRIPTION -->
+	<td>
+
+
+	</td>
+</table>
 </body>
 </html>
