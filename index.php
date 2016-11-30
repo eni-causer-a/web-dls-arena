@@ -17,7 +17,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 			include("./include/_inc_parametres.php");
 			include("./include/_inc_connexion.php");
 
-            $req_pre = $cnx->prepare("INSERT INTO propositions (contenu) VALUES (:idee, :adr_ip)");
+            $req_pre = $cnx->prepare("INSERT INTO propositions (contenu, adr_ip) VALUES (:idee, :adr_ip)");
             $req_pre->bindValue(':idee', $_POST['idee'] , PDO::PARAM_STR);
             $req_pre->bindValue(':adr_ip',$adr_ip,PDO::PARAM_STR);
 
