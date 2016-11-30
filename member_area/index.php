@@ -76,7 +76,12 @@ session_start();
                     <div class="col-lg-6" >
                         <div class="align-center">
                            <h2>Inscription</h2>
-                           <?php include ('register.php'); ?>
+                           <?php include ('register.php');
+                            if(isset($_SESSION['err_ins'])){
+                                echo '<p>'.$_SESSION['err_ins'].'</p>' ;
+                            }
+
+                        ?>
                         </div>
                     </div>
 
