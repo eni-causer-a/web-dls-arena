@@ -18,7 +18,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 			include("./include/_inc_parametres.php");
 			include("./include/_inc_connexion.php");
 
-            $req = $PDO->prepare("INSERT INTO propositions (contenu) VALUES (:idee)");
+            $req_pre = $cnx->prepare("INSERT INTO propositions (contenu) VALUES (:idee)");
             $req_pre->bindValue(':idee', $_POST['idee'] , PDO::PARAM_STR);
 
             $erreur = "Message envoyé";

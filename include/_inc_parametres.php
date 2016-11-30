@@ -5,7 +5,7 @@
 //     require_once ('_inc_parametres.php');
 
 // connexion de l'application cliente au SGBD MySQL
-$PARAM_HOTE = "sql.amaury-causer.com";		// nom du serveur de données
+$PARAM_HOTE = "localhost";		// nom du serveur de données
 $PARAM_port = '10009';
 $PARAM_USER = "wvhhcw_dlsarena";		// nom de l'utilisateur
 $PARAM_PWD  = "arenadls";				// son mot de passe
