@@ -6,8 +6,8 @@
 
 // connexion de l'application cliente au SGBD MySQL
 $PARAM_HOTE = "localhost";		// nom du serveur de données
-$PARAM_port = '10009';
-$PARAM_USER = "wvhhcw_dlsarena";		// nom de l'utilisateur
-$PARAM_PWD  = "arenadls";				// son mot de passe
-$PARAM_BDD  = "wvhhcw_dlsarena";		// nom de la base de données
+
+$PARAM_USER = "dlsarenaradls";		// nom de l'utilisateur
+$PARAM_PWD  = "Azeqsdaqw1";				// son mot de passe
+$PARAM_BDD  = "dlsarenaradls";		// nom de la base de données
 ?>
