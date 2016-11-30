@@ -70,7 +70,7 @@ session_start();
                                     <tr>
                                         <td>
                                             <h3 style="margin-top:50px;">Vous pourrez vous connectez dès que les modalités des tournois seront fixées.
-                                            </h3><h3> Inscrivez dès maintenants pour recevoir un email dès l'ouverture de l'inscription aux tournois.</h3></td>
+                                            </h3><h3> Inscrivez vous dès maintenants pour recevoir un email dès l'ouverture de l'inscription aux tournois.</h3></td>
                                         </td>
                                         <td> <img src="../img/fleche.png"></img>
                                         </td>
