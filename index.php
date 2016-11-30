@@ -107,7 +107,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
-                        <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
+                        <button class="btn" ><a href="member_area/index.php">Inscription</a></button> <!-- //Bouton -->
 
                         <br/>
                         <br/>
@@ -123,7 +123,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
-                        <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
+                        <button class="btn" ><a href="member_area/index.php">Inscription</a></button> <!-- //Bouton -->
 
                         <br/>
                         <br/>
@@ -135,7 +135,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 			<div class="row mar-bot40">
 				<div class="col-lg-6" >
 					<div class="align-center">
-                            <img src="./img/FifaLogo.jpg" height="65px"/>
+                            <img src="./img/fifalogo.jpg" height="65px"/>
                             <br/>
                             <p>FIFA est un jeu de simulation de football édité par Electronic Arts</p>
                             Nombre de joueurs par équipe: 1<br/>
@@ -143,10 +143,9 @@ if ( $_GET['action'] == 'sendidee' ) {
                             <br/>
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
-                        <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
-
-                        <br/>
-                        <br/>
+                        <button class="btn" ><a href="member_area/index.php">Inscription</a></button> <!-- //Bouton -->
+ <a href="member_area/index.php">     <br/>
+                            </a>                        <br/>
 					</div>
 				</div>
 
@@ -160,7 +159,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
-                        <button class="btn" disabled="disabled">Inscription</button> <!-- //Bouton -->
+                        <button class="btn" ><a href="member_area/index.php">Inscription</a></button> <!-- //Bouton -->
 
                         <br/>
                         <br/>
@@ -218,7 +217,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 							<div class="team-member">
 								<figure class="member-photo"><img src="img/team/member1.jpg" alt="" height="200px"/></figure>
 								<div class="team-detail">
-									<h4>Arthur.H</h4>
+									<h4>Arthur.A</h4>
 									<span>Assistant chef de projet</span>
 								</div>
 							</div>

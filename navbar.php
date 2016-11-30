@@ -60,7 +60,7 @@
                                     }
                                     else // si l'utilisateur est déconnecté
                                     { ?>
-                                    <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                                    <li><a href="member_area/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Inscription</a></li>
                                        <?php
                                     }
 

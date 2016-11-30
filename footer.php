@@ -11,7 +11,8 @@
 			</div>
 
 			<div class="row align-center copyright">
-					<div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstrap Themes</a></p></div>
+					<div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstrap Themes</a><br>Icon made by flaticon from www.flaticon.com </p></div>
+
                 <div class="col-sm-12"><p><a href="./mentions-legales.php">Mentions légales</a></p></div>
                     <!--
                         All links in the footer should remain intact.
