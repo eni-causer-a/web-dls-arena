@@ -3,11 +3,10 @@ if (isset ($_GET['action'])) {
 	if ( $_GET['action'] == 'inscription' ) {
 		// après validation des champs
 
-		if ($_POST['password'] != $_POST['repassword'] ) {
+		if ($_POST['password'] != $_POST['repassword'] )
+        {
             $_SESSION['err_ins'] = "Mot de passe non identique";
-            ?>
-            <meta http-equiv="refresh" content="0 ; url=index.php">
-			<?php
+        }
 		else
 		{
 			// include ("menu.php");
