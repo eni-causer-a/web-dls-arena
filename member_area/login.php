@@ -15,8 +15,8 @@ if (isset ($_GET['action'])) {
 			// affichage du menu
 			// include ("menu.php");
 			// connexion à la base de données
-			include("include/_inc_parametres.php");
-			include("include/_inc_connexion.php");
+			include("../include/_inc_parametres.php");
+			include("../include/_inc_connexion.php");
 
 			// préparation de la requête : recherche de l'utilisateur
 			$req_pre = $cnx->prepare("SELECT mdp FROM utilisateurs WHERE ident = :id");
