@@ -8,18 +8,18 @@ if ( $_GET['action'] == 'sendidee' ) {
 		if ($_POST['idee'] == '') {
 
 			$erreur = "Erreur: Champs vide";
-
-
 		}
 		else
 		{
-			// include ("menu.php");
+            if(isset($_SERVER['REMOTE_ADDR'])){$adr_ip=$_SERVER['REMOTE_ADDR'];}
+            else{$adr_ip="Erreur";}
 			// connexion à la base de données
 			include("./include/_inc_parametres.php");
 			include("./include/_inc_connexion.php");
 
-            $req_pre = $cnx->prepare("INSERT INTO propositions (contenu) VALUES (:idee)");
+            $req_pre = $cnx->prepare("INSERT INTO propositions (contenu) VALUES (:idee, :adr_ip)");
             $req_pre->bindValue(':idee', $_POST['idee'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':adr_ip',$adr_ip,PDO::PARAM_STR);
 
             $erreur = "Message envoyé";
             $req_pre->execute();
@@ -185,14 +185,9 @@ if ( $_GET['action'] == 'sendidee' ) {
                                 <td><input size="500"name="idee" class="form-control" placeholder="Jeux, idées" type="text"></td>
                                 <td><input style="margin-left: 20px;" type="submit" value="Envoyer"/></td>
                                 <?php echo '<p>'.$erreur.'</p>' ; ?>
-
                                 </table>
                             </div>
                             <br/>
-
-                            <?php
-                            // A faire /!\
-                            ?>
                         </div>
                     </div>
                 </fieldset>
