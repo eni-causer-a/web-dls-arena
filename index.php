@@ -178,11 +178,11 @@ if ( $_GET['action'] == 'sendidee' ) {
 
                     <!-- Appended Input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="appendedtext">Propositions :</label>
+                        <label class="col-md-4 control-label" for="appendedtext" style="margin-top: 10px;margin-left: 100px;">Propositions :</label>
                         <div class="col-md-4">
                             <div class="input-group">
                                <table>
-                                <td><input size="500"name="idee" class="form-control" placeholder="Jeux, idées" type="text"></td>
+                                <td><input size="100%" name="idee" class="form-control" placeholder="Jeux, idées" type="text"></td>
                                 <td><input style="margin-left: 20px;" type="submit" value="Envoyer"/></td>
                                 <?php echo '<p>'.$erreur.'</p>' ; ?>
                                 </table>
