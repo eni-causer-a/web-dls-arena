@@ -1,20 +1,25 @@
 <?php
+
 if (isset ($_GET['action'])) {
 	if ( $_GET['action'] == 'inscription' ) {
 		// après validation des champs
-
+        session_start();
 		if ($_POST['password'] != $_POST['repassword'] )
         {
             $_SESSION['err_ins'] = "Mot de passe non identique";
+            ?>
+            <meta http-equiv="refresh" content="0 ; url=index.php">
+			<?php
         }
 		else
 		{
+
 			// include ("menu.php");
 			// connexion à la base de données
 			include("../include/_inc_parametres.php");
 			include("../include/_inc_connexion.php");
 
-            $req_pre = $cnx->prepare("INSERT INTO utilisateurs (nom, prenom; pseudo, classe, mdp, email) VALUES (:nom, :prenom, :pseudo, :classe, :mdp, :email)");
+            $req_pre = $cnx->prepare("INSERT INTO utilisateurs(nom, prenom, pseudo, classe, mdp, email, niveauUtilisateur) VALUES (:nom, :prenom, :pseudo, :classe, :mdp, :email, 1)");
             $req_pre->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
             $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
             $req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
@@ -25,11 +30,11 @@ if (isset ($_GET['action'])) {
             $req_pre->execute();
 
             $_SESSION['err_ins'] = "Inscription réussite, connectez vous !";
+            $req_pre->closeCursor();
             ?>
             <meta http-equiv="refresh" content="0 ; url=index.php">
-			<?php
-            ?>
-    <meta http-equiv="refresh" content="0 ; url=accueil.php">
+
+
     <?php
         }
     }
