@@ -1,5 +1,35 @@
 <?php
 session_start();
+$erreur = "";
+if (isset ($_GET['action'])) {
+if ( $_GET['action'] == 'sendidee' ) {
+		// après validation des champs
+
+		if ($_POST['idee'] == '') {
+
+			$erreur = "Erreur: Champs vide";
+
+
+		}
+		else
+		{
+			// include ("menu.php");
+			// connexion à la base de données
+			include("../include/_inc_parametres.php");
+			include("../include/_inc_connexion.php");
+
+            $req = $PDO->prepare("INSERT INTO utilisateurs (nom, prenom; pseudo, classe, mdp, email) VALUES (:nom, :prenom, :pseudo, :classe, :mdp, :email)");
+            $req_pre->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':mdp', sha1($_POST['password']) , PDO::PARAM_STR);
+            $req_pre->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
+
+            $req_pre->execute();
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -144,7 +174,7 @@ session_start();
 
 			</div>
 
-                <form class="form-horizontal">
+                <form method="post" target="page" action="?action=sendidee#section-services">
                 <fieldset>
 
                     <!-- Form Name -->
@@ -155,8 +185,12 @@ session_start();
                         <label class="col-md-4 control-label" for="appendedtext">Propositions :</label>
                         <div class="col-md-4">
                             <div class="input-group">
-                                <input id="appendedtext" name="appendedtext" class="form-control" placeholder="Jeux, idées" type="text">
-                                <span class="input-group-addon">Valider</span>
+                               <table>
+                                <td><input size="500"name="idee" class="form-control" placeholder="Jeux, idées" type="text"></td>
+                                <td><input style="margin-left: 20px;" type="submit" value="Envoyer"/></td>
+                                <?php echo '<p>'.$erreur.'</p>' ; ?>
+
+                                </table>
                             </div>
                             <br/>
 
