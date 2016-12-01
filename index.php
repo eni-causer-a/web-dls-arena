@@ -181,7 +181,7 @@ if ( $_GET['action'] == 'sendidee' ) {
                         <div class="col-md-4">
                             <div class="input-group">
                                <table>
-                                <td><input size="100%" name="idee" class="form-control" placeholder="Jeux, idées" type="text"></td>
+                                <td><input size="100%" name="idee" class="form-control" placeholder="Jeux, idées" type="text" required></td>
                                 <td><input style="margin-left: 20px;" type="submit" value="Envoyer"/></td>
                                 <?php echo '<p>'.$erreur.'</p>' ; ?>
                                 </table>

@@ -66,16 +66,16 @@ session_start();
                             <!-- Login -->
                             <div class="col-lg-6">
                                 <div class="align-center">
-                                   <table>
-                                    <tr>
-                                        <td>
+
+
+
                                             <h3 style="margin-top:50px;">Vous pourrez vous connectez dès que les modalités des tournois seront fixées.
-                                            </h3><h3> Inscrivez vous dès maintenants pour recevoir un email dès l'ouverture de l'inscription aux tournois.</h3></td>
-                                        </td>
-                                        <td> <img src="../img/fleche.png"></img>
-                                        </td>
-                                    </tr>
-                                    </table>
+                                            <br><br> Inscrivez vous dès maintenants pour recevoir un email dès l'ouverture de l'inscription aux tournois.</h3>
+
+                                         <img src="../img/fleche.png"></img>
+
+
+
                                     <!--<?//php include ('login.php'); ?>
                            <p><a href="sessiontest.php">Simuler une connexion</a></p>-->
                                 </div>

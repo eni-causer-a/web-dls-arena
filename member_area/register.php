@@ -43,29 +43,29 @@ if (isset ($_GET['action'])) {
 
 			?>
         <form method="post" target="page" action="register.php?action=inscription">
-            <table>
+            <table >
                 <tr>
                     <td>Nom :</td>
                     <td>
-                        <input type="text" name='nom' />
+                        <input type="text" name='nom' required style="margin-top: 5px;"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Prénom :</td>
                     <td>
-                        <input type="text" name='prenom' />
+                        <input type="text" name='prenom' required style="margin-top: 5px;"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Pseudo :</td>
                     <td>
-                        <input type="text" name='pseudo' />
+                        <input type="text" name='pseudo' required style="margin-top: 5px;"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Classe :</td>
                     <td>
-                        <select name="classe">
+                        <select name="classe" style="margin-top: 5px;">
                             <option value="SIO1">SIO1</option>
                             <option value="SIO2">SIO2</option>
                             <option value="ASS1">ASS1</option>
@@ -83,25 +83,25 @@ if (isset ($_GET['action'])) {
                 <tr>
                     <td>Email : </td>
                     <td>
-                        <input type="email" name='email' />
+                        <input type="email" name='email' required style="margin-top: 5px;" />
                     </td>
                 </tr>
                 <tr>
                     <td>Mot de passe : </td>
                     <td>
-                        <input type="password" name='password' />
+                        <input type="password" name='password' required style="margin-top: 5px;" />
                     </td>
                 </tr>
                 <tr>
                     <td>Confirmation Mot de passe : </td>
                     <td>
-                        <input type="password" name='repassword' />
+                        <input type="password" name='repassword' required style="margin-top: 5px;"/>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Valider" />
+                        <input type="submit" value="Valider" required style="margin-top: 5px;"/>
                     </td>
                 </tr>
             </table>
