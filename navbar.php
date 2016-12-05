@@ -21,7 +21,7 @@
                                 if ($page_actuelle[0]=="index.php") //si on est sur la page index de l'espace membre (login/inscription)
                                 { ?>
 
-                                <li><a href="../index.php">Retour à l'Accueil</a></li>
+                                <li style="margin-top: 25px;"><a href="../index.php">Retour à l'Accueil</a></li>
 
                                     <?php
                                 }
