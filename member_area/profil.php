@@ -54,22 +54,11 @@ session_start();
 			<div class="row mar-bot40">
 
 				<div class="col-lg-6" >
-				    <a href="equipe.php">
 					<div class="align-center" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
-                            <i class="fa fa-users fa-5x mar-bot20" aria-hidden="true"></i>
-                            <h2>ÉQUIPE</h2>
+                            <p>ceci est un paragraphe dans une div loul</p>
 					</div>
-					</a>
 				</div>
 
-				<div class="col-lg-6" >
-					<a href="profil.php">
-					<div class="align-center" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
-                            <i class="fa fa-user fa-5x mar-bot20" aria-hidden="true"></i>
-                            <h2>PROFIL</h2>
-					</div>
-					</a>
-                </div>
 
 			</div>
         </div>

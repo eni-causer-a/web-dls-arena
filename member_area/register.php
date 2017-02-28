@@ -29,7 +29,7 @@ if (isset ($_GET['action'])) {
 
             $req_pre->execute();
 
-            $_SESSION['err_ins'] = "Inscription réussite, connectez vous !";
+            $_SESSION['err_ins'] = "Inscription réussie, connectez vous !";
             $req_pre->closeCursor();
             ?>
             <meta http-equiv="refresh" content="0 ; url=index.php">

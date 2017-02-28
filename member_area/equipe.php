@@ -51,22 +51,22 @@ session_start();
             <section id="section-services" class="section pad-bot30 bg-white">
 		<div class="container" style="height:100%">
 
+            <!-- A afficher si pas d'équipe-->
 			<div class="row mar-bot40">
-
 				<div class="col-lg-6" >
-				    <a href="equipe.php">
+				    <a href="">
 					<div class="align-center" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
-                            <i class="fa fa-users fa-5x mar-bot20" aria-hidden="true"></i>
-                            <h2>ÉQUIPE</h2>
+                            <i class="fa fa-plus fa-5x mar-bot20" aria-hidden="true"></i>
+                            <h2>CRÉER</h2>
 					</div>
 					</a>
 				</div>
 
 				<div class="col-lg-6" >
-					<a href="profil.php">
+					<a href="">
 					<div class="align-center" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
-                            <i class="fa fa-user fa-5x mar-bot20" aria-hidden="true"></i>
-                            <h2>PROFIL</h2>
+                            <i class="fa fa-share fa-5x mar-bot20" aria-hidden="true"></i>
+                            <h2>REJOINDRE</h2>
 					</div>
 					</a>
                 </div>

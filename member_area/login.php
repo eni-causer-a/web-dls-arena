@@ -66,16 +66,16 @@ else
 	<form method="post" target="page" action="login.php?action=connexion">
 		<table>
 			<tr>
-				<td>Identifiant :</td>
-				<td><input type="text" name='ident' /></td>
+				<td width="200px">Identifiant :</td>
+				<td><input type="text" name="ident" style="margin-top: 5px;" /></td>
 			</tr>
 			<tr>
 				<td>Mot de passe :</td>
-				<td><input type="password" name='password' /></td>
+				<td><input type="password" name="password" style="margin-top: 5px;" /></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Connexion"/></td>
+				<td><input type="submit" value="Connexion" style="margin-top: 5px;" /></td>
 			</tr>
 		</table>
 	</form>
