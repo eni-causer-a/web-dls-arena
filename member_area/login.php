@@ -3,7 +3,7 @@ if (isset ($_GET['action'])) {
 	if ( $_GET['action'] == 'connexion' ) {
 		// après validation de identifiant et du mot de passe
 
-		if ($_POST['ident'] == '' OR $_POST['password'] == '') {
+		if ($_POST['pseudo'] == '' OR $_POST['password'] == '') {
 			echo "Merci de bien renseigner l'ensemble des champs";
 			echo "<br />";
 			echo "<a href='index.php'>Retour</a>";
@@ -19,9 +19,9 @@ if (isset ($_GET['action'])) {
 			include("../include/_inc_connexion.php");
 
 			// préparation de la requête : recherche de l'utilisateur
-			$req_pre = $cnx->prepare("SELECT mdp FROM utilisateurs WHERE ident = :id");
+			$req_pre = $cnx->prepare("SELECT mdp FROM utilisateurs WHERE pseudo = :pseudo");
 			// liaison de la variable à la requête préparée
-			$req_pre->bindValue(':id', $_POST['ident'] , PDO::PARAM_STR);
+			$req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
 			$req_pre->execute();
 			//le résultat est récupéré sous forme d'objet
 			$ligne=$req_pre->fetch(PDO::FETCH_OBJ);
@@ -32,7 +32,7 @@ if (isset ($_GET['action'])) {
 			$req_pre->closeCursor();
 
 			$_SESSION['connect'] = $mdp == sha1($_POST['password']);
-			$_SESSION['id'] = $_POST['ident'];
+			$_SESSION['pseudo'] = $_POST['pseudo'];
 
 			?>
 			<html>
@@ -66,8 +66,8 @@ else
 	<form method="post" target="page" action="login.php?action=connexion">
 		<table>
 			<tr>
-				<td width="200px">Identifiant :</td>
-				<td><input type="text" name="ident" style="margin-top: 5px;" /></td>
+				<td width="200px">Pseudo :</td>
+				<td><input type="text" name="pseudo" style="margin-top: 5px;" /></td>
 			</tr>
 			<tr>
 				<td>Mot de passe :</td>

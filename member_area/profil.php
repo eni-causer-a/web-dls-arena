@@ -1,5 +1,30 @@
 <?php
-session_start();
+    session_start();
+    include("../include/_inc_parametres.php");
+    include("../include/_inc_connexion.php");
+    if (isset ($_GET['action'])) {
+	if ( $_GET['action'] == 'modification' ) {
+		// après validation des champs
+
+            $req_pre = $cnx->prepare("UPDATE utilisateurs SET nom = :nom, prenom= :prenom, pseudo= :pseudo, classe= :classe, email= :email");
+            $req_pre->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
+
+            $req_pre->execute();
+
+            $_SESSION['err_ins'] = "Modification effectué";
+            $req_pre->closeCursor();
+            ?>
+            <meta http-equiv="refresh" content="0 ; url=index.php">
+
+
+    <?php
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -51,13 +76,80 @@ session_start();
             <section id="section-services" class="section pad-bot30 bg-white">
 		<div class="container" style="height:100%">
 
-			<div class="row mar-bot40">
+			<div class="row mar-bot40" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;>
 
-				<div class="col-lg-6" >
-					<div class="align-center" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
-                            <p>ceci est un paragraphe dans une div loul</p>
-					</div>
-				</div>
+		<?php
+
+            // préparation de la requête : recherche de l'utilisateur
+			$req_pre = $cnx->prepare("SELECT * FROM utilisateurs WHERE pseudo = :pseudo");
+			// liaison de la variable à la requête préparée
+			$req_pre->bindValue(':pseudo', $_SESSION['pseudo'] , PDO::PARAM_STR);
+			$req_pre->execute();
+			//le résultat est récupéré sous forme d'objet
+			$getinfo =$req_pre->fetch(PDO::FETCH_OBJ);
+			// récupération du mot de passe
+			$test = $getinfo->nom;
+            $req_pre->closeCursor();
+
+
+			/
+
+
+        ?>
+
+        <form  action="profil.php?action=modification">
+            <table>
+                <tr>
+                    <td>Nom :</td>
+                    <td>
+                        <input type="text" name='nom' required style="margin-top: 5px;" value="<?php echo $getinfo->nom; ?>" pattern=".{2,}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prénom :</td>
+                    <td>
+                        <input type="text" name='prenom' required style="margin-top: 5px;" value="<?php echo $getinfo->prenom; ?>" pattern=".{2,}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pseudo :</td>
+                    <td>
+                        <input type="text" name='pseudo' required style="margin-top: 5px;" value="<?php echo $getinfo->pseudo; ?>" pattern=".{2,}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Classe :</td>
+                    <td>
+                        <select name="classe" style="margin-top: 5px;">
+                            <option value="SIO1">SIO1</option>
+                            <option value="SIO2">SIO2</option>
+                            <option value="ASS1">ASS1</option>
+                            <option value="ASS2">ASS2</option>
+                            <option value="MUC1">MUC1</option>
+                            <option value="MUC2">MUC2</option>
+                            <option value="DCG1">DCG1</option>
+                            <option value="DCG2">DCG2</option>
+                            <option value="DCG3">DCG3</option>
+                            <option value="NRC1">NRC1</option>
+                            <option value="NRC2">NRC2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td>
+                        <input type="email" name='email' required style="margin-top: 5px;" value="<?php echo $getinfo->email; ?>" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Modifier" required style="margin-top: 5px;"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
 
 
 			</div>
