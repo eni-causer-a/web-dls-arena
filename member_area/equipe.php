@@ -65,6 +65,19 @@ session_start();
             else
             {
                 $equipe=true;
+
+                $idEquipe=$ligne->idEquipe;
+
+                $req_equ=$cnx->prepare("SELECT * FROM equipes WHERE id = :equipe");
+                $req_equ->bindValue(':equipe', $idEquipe , PDO::PARAM_STR);
+                $req_equ->execute();
+                $ligne_equ=$req_equ->fetch(PDO::FETCH_OBJ);
+
+                $nomEquipe=$ligne_equ->nomEquipe;
+                $mdpEquipe=$ligne_equ->mdp;
+
+                // Variables importantes : $idEquipe , $nomEquipe et $mdpEquipe
+
                 if ($ligne->chef==1)
                 {$chef=true;}
                 else
@@ -81,13 +94,107 @@ session_start();
             {
                 //Si le membre est chef d'équipe
                 if($chef==true)
-                {
+                { ?>
+            <div class="row mar-bot40"> <!-- Début div "Chef" -->
 
+                <div class="col-lg-6" > <!-- Gauche -->
+                    <div class="align-center">
+                        <h2>Titre gauche</h2>
+                    </div>
+                </div> <!-- Fin Gauche -->
+
+                <div class="col-lg-6" > <!-- Droite -->
+                    <div class="align-center">
+                        <h2>Titre droite</h2>
+                    </div>
+                </div> <!-- Fin Droite -->
+
+            </div> <!-- Fin div "Chef" -->
+                <?php
                 }
                 //Si le membre est simple membre d'équipe
                 else
                 {
+            ?>
+            <div class="row mar-bot40"> <!-- Début div "Simple membre" -->
 
+                <div class="col-lg-6" > <!-- Gauche -->
+                    <div class="align-center">
+                        <h2><?php echo $nomEquipe; ?></h2>
+
+                        <table style="margin: 0 auto; border:solid 1px; width:400px;">
+                          <?php
+                            $req_membres=$cnx->prepare("SELECT pseudo,chef FROM inscriptionequipe, utilisateurs WHERE idEquipe = :equipe AND utilisateurs.id=idJoueur ORDER BY chef DESC;");
+                            $req_membres->bindValue(':equipe', $idEquipe , PDO::PARAM_STR);
+                            $req_membres->execute();
+                            $req_membres->setFetchMode(PDO::FETCH_OBJ);
+
+                            $membre=$req_membres->fetch();
+                            while($membre)
+                            { ?>
+                               <tr style="border:solid 1px;">
+                               <td style="border:solid 1px" width="80%">
+                                   <?php echo $membre->pseudo ?>
+                               </td>
+                               <td>
+                                   <?php
+                                    if ($membre->chef==1)
+                                    {
+                                        echo'<i class="fa fa-bookmark" aria-hidden="true"></i>';
+                                    }
+                                    else
+                                    {
+                                        echo'<i class="fa fa-user" aria-hidden="true"></i>';
+                                    }
+                                   ?>
+                               </td>
+                           </tr>
+                            <?php
+                            $membre=$req_membres->fetch();
+                            }
+                            $req_membres->closeCursor();
+                            ?>
+                        </table>
+                    </div>
+                </div> <!-- Fin Gauche -->
+
+                <div class="col-lg-6" > <!-- Droite -->
+                    <div class="align-center">
+                        <h2>Options</h2>
+                        <?php
+                    if(isset($_GET['action'])) //On arrive ici si un formulaire a été rempli
+                    {
+                        if($_GET['action']=='quitter')
+                        {
+                            $req_del=$cnx->prepare("DELETE FROM inscriptionequipe WHERE idJoueur = :id");
+                            $req_del->bindValue(':id',$_SESSION['id'],PDO::PARAM_STR);
+                            $req_del->execute();
+                            echo 'Vous venez de quitter l\'équipe "' . $nomEquipe . '" ';
+                        }
+                        else
+                        {
+                            echo "Merci de remplir tous les champs";
+                        }
+                    //Le message s'affiche quoi qu'il arrive
+                    echo"<br/>Vous allez être redirigé vers l'espace membre dans cinq secondes.
+                    <br/>Si votre navigateur ne gère pas la redirection automatique (ou que vous êtes pressé.e) <a href='equipe.php'>vous pouvez cliquer sur ce lien </a>";
+                    }
+                    else //Si aucun formulaire n'a été rempli on arrive sur les options
+                    { ?>
+                        <p>
+                          Mot de passe de l'équipe : <?php echo $mdpEquipe ; ?><br/>
+                          <a href="equipe.php?action=quitter">Quitter l'équipe</a>
+                        </p>
+                    <?php
+                    }
+                    ?>
+
+
+                    </div>
+                </div> <!-- Fin Droite -->
+
+            </div> <!-- Fin div "Simple membre" -->
+                <?php
                 }
             }
             //Si le membre n'a pas d'équipe
@@ -154,9 +261,6 @@ session_start();
                                             echo'Cette équipe n\'existe pas' .$_POST['equipe'];
                                         }
                                         else{
-
-                                            if ($ligne->mdp==$_POST['motdepasse'])
-
                                             $req_nbjoueurs=$cnx->prepare("SELECT count(*) nbJoueurs FROM inscriptionequipe WHERE idEquipe = :equipe");
                                             $req_nbjoueurs->bindValue(':equipe', $_POST['equipe'] , PDO::PARAM_STR);
                                             $req_nbjoueurs->execute();
@@ -169,7 +273,7 @@ session_start();
                                             $ligne_max=$req_max->fetch(PDO::FETCH_OBJ);
                                             $maxJoueurs=$ligne_max->nbJoueurs;
 
-                                            echo 'MAXJOUEURS ICI : ' . $maxJoueurs . '<br/>';
+                                            //echo 'MAXJOUEURS ICI : ' . $maxJoueurs . '<br/>';
 
 
                                             if($nbJoueurs<$maxJoueurs)
