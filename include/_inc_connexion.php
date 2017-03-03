@@ -1,7 +1,7 @@
 <?php
 try
 {
-	$cnx = new PDO('mysql:host='.$PARAM_HOTE.'dbname='.$PARAM_BDD,$PARAM_USER,$PARAM_PWD);
+	$cnx = $bdd = new PDO('mysql:host=localhost;dbname=dlsarenadls', 'root', '');
 }
 catch (Exception $e)
 {
