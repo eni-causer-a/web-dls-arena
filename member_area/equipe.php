@@ -156,17 +156,41 @@ session_start();
                                         else{
 
                                             if ($ligne->mdp==$_POST['motdepasse'])
-                                            {
-                                                $req_pre2 = $cnx->prepare("INSERT INTO inscriptionequipe VALUES (:equipe,:joueur,0)");
-                                                $req_pre2->bindValue(':equipe', $_POST['equipe'] , PDO::PARAM_STR);
-                                                $req_pre2->bindValue(':joueur', $_SESSION['id'] , PDO::PARAM_STR);
-                                                $req_pre2->execute();
 
-                                                echo'Félicitations, vous avez rejoint l\'équipe !';
+                                            $req_nbjoueurs=$cnx->prepare("SELECT count(*) nbJoueurs FROM inscriptionequipe WHERE idEquipe = :equipe");
+                                            $req_nbjoueurs->bindValue(':equipe', $_POST['equipe'] , PDO::PARAM_STR);
+                                            $req_nbjoueurs->execute();
+                                            $ligne_nbJoueurs=$req_nbjoueurs->fetch(PDO::FETCH_OBJ);
+                                            $nbJoueurs=$ligne_nbJoueurs->nbJoueurs;
+
+                                            $req_max=$cnx->prepare("SELECT nbJoueurs FROM jeux WHERE id = :lejeu");
+                                            $req_max->bindValue(':lejeu', $ligne->jeuInscrit , PDO::PARAM_STR);
+                                            $req_max->execute();
+                                            $ligne_max=$req_max->fetch(PDO::FETCH_OBJ);
+                                            $maxJoueurs=$ligne_max->nbJoueurs;
+
+                                            echo 'MAXJOUEURS ICI : ' . $maxJoueurs . '<br/>';
+
+
+                                            if($nbJoueurs<$maxJoueurs)
+                                            {
+                                                if ($ligne->mdp==$_POST['motdepasse'])
+                                                {
+                                                    $req_pre2 = $cnx->prepare("INSERT INTO inscriptionequipe VALUES (:equipe,:joueur,0)");
+                                                    $req_pre2->bindValue(':equipe', $_POST['equipe'] , PDO::PARAM_STR);
+                                                    $req_pre2->bindValue(':joueur', $_SESSION['id'] , PDO::PARAM_STR);
+                                                    $req_pre2->execute();
+
+                                                    echo'Félicitations, vous avez rejoint l\'équipe !';
+                                                }
+                                                else
+                                                {
+                                                    echo'Mot de passe erroné.';
+                                                }
                                             }
                                             else
                                             {
-                                                echo'Mot de passe erroné.';
+                                                echo'L\'équipe est pleine, dommage !';
                                             }
                                         }
                                     }
