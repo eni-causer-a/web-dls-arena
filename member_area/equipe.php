@@ -26,7 +26,10 @@ session_start();
 		<script src="../js/jquery.countdown.js"></script>
 
 </head>
-    <?php include("../navbar.php"); ?>
+    <?php include("../navbar.php");
+          include("../include/_inc_parametres.php");
+          include("../include/_inc_connexion.php");?>
+
     <section class="featured" id="featured">
 			<div class="container">
 			    <!-- Titre DLS -->
@@ -48,11 +51,49 @@ session_start();
     {
         if ( $_SESSION['connect'] == true ) // si l'utilisateur est confirmé, on affiche l'espace membre.
         { ?>
+
+        <?php
+         //on vérifie si l'utilisateur a une équipe
+			$req_pre = $cnx->prepare("SELECT * FROM inscriptionequipe, utilisateurs WHERE utilisateurs.pseudo=:pseudo AND idJoueur=utilisateurs.id");
+			// liaison de la variable à la requête préparée
+			$req_pre->bindValue(':pseudo', $_SESSION['pseudo'] , PDO::PARAM_STR);
+			$req_pre->execute();
+			//le résultat est récupéré sous forme d'objet
+			$ligne=$req_pre->fetch(PDO::FETCH_OBJ);
+			// récupération du résultat
+            if(empty($ligne)){$equipe=false;}
+            else
+            {
+                $equipe=true;
+                if ($ligne->chef==1)
+                {$chef=true;}
+                else
+                {$chef=false;}
+            }
+
+			// fermeture du curseur associé à un jeu de résultats
+			$req_pre->closeCursor();
+        ?>
             <section id="section-services" class="section pad-bot30 bg-white">
 		<div class="container" style="height:100%">
+        <?php
+            if($equipe==true)
+            {
+                //Si le membre est chef d'équipe
+                if($chef==true)
+                {
 
-            <!-- A afficher si pas d'équipe-->
-			<div class="row mar-bot40">
+                }
+                //Si le membre est simple membre d'équipe
+                else($chef==false)
+                {
+
+                }
+            }
+            //Si le membre n'a pas d'équipe
+            else
+            { ?>
+                <div class="row mar-bot40"> <!-- Début div "page" -->
 				<div class="col-lg-6" >
 				    <a href="">
 					<div class="align-center" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
@@ -70,8 +111,10 @@ session_start();
 					</div>
 					</a>
                 </div>
-
-			</div>
+			</div> <!-- Fin div "page" -->
+            <?php
+            }
+            ?>
         </div>
     </section>
     <?php include("../footer.php"); ?>
