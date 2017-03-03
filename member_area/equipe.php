@@ -99,13 +99,140 @@ session_start();
 
                 <div class="col-lg-6" > <!-- Gauche -->
                     <div class="align-center">
-                        <h2>Titre gauche</h2>
+                        <h2><?php echo $nomEquipe; ?></h2>
+
+                        <table style="margin: 0 auto; border:solid 1px; width:400px;">
+                          <?php
+                            $req_membres=$cnx->prepare("SELECT pseudo,chef,idJoueur FROM inscriptionequipe, utilisateurs WHERE idEquipe = :equipe AND utilisateurs.id=idJoueur ORDER BY chef DESC;");
+                            $req_membres->bindValue(':equipe', $idEquipe , PDO::PARAM_STR);
+                            $req_membres->execute();
+                            $req_membres->setFetchMode(PDO::FETCH_OBJ);
+
+                            $membre=$req_membres->fetch();
+                            while($membre)
+                            { ?>
+                               <tr style="border:solid 1px;">
+                               <td style="border:solid 1px" width="80%">
+                                   <?php echo $membre->pseudo ?>
+                               </td>
+                               <td>
+                                   <?php
+                                    if ($membre->chef==1)
+                                    {
+                                        echo'<i class="fa fa-bookmark" aria-hidden="true"></i>';
+                                    }
+                                    else
+                                    {
+                                        echo'<a href="equipe.php?action=leguer&id='.$membre->idJoueur.'&pseudo='.$membre->pseudo.'"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                                    }
+                                   ?>
+                               </td>
+                               <td style="border:solid 1px">
+                                   <?php
+                                    if ($membre->chef==1)
+                                    {
+                                        echo'<i class="fa fa-times" aria-hidden="true"></i>';
+                                    }
+                                    else
+                                    {
+                                        echo'<a href="equipe.php?action=virer&id='.$membre->idJoueur.'&pseudo='.$membre->pseudo.'"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                                    }
+                                   ?>
+                               </td>
+
+                           </tr>
+                            <?php
+                            $membre=$req_membres->fetch();
+                            }
+                            $req_membres->closeCursor();
+                            ?>
+                        </table>
                     </div>
                 </div> <!-- Fin Gauche -->
 
                 <div class="col-lg-6" > <!-- Droite -->
                     <div class="align-center">
-                        <h2>Titre droite</h2>
+                        <h2>Options</h2>
+                        <?php
+                    if(isset($_GET['action'])) //On arrive ici si un formulaire a été rempli
+                    {
+                        if($_GET['action']=='leguer')
+                        {
+                            $req_chef=$cnx->prepare("UPDATE inscriptionequipe SET chef=0 WHERE idJoueur = :id AND idEquipe = :equipe ");
+                            $req_chef->bindValue(':id',$_SESSION['id'],PDO::PARAM_STR);
+                            $req_chef->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+                            $req_chef->execute();
+                            $req_chef2=$cnx->prepare("UPDATE inscriptionequipe SET chef=1 WHERE idJoueur = :id2 AND idEquipe = :equipe ");
+                            $req_chef2->bindValue(':id2',$_GET['id'],PDO::PARAM_STR);
+                            $req_chef2->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+                            $req_chef2->execute();
+
+                            echo 'Vous venez de léguer la team à "' . $_GET['pseudo'] . '" ';
+                        }
+                        elseif($_GET['action']=='virer')
+                        {
+                            $req_del=$cnx->prepare("DELETE FROM inscriptionequipe WHERE idJoueur = :id AND idEquipe = :equipe ");
+                            $req_del->bindValue(':id',$_GET['id'],PDO::PARAM_STR);
+                            $req_del->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+
+                            $req_del->execute();
+                            echo 'Vous venez d\'expulser "' . $_GET['pseudo'] . '" ';
+                        }
+                        elseif($_GET['action']=='mdp')
+                        {
+                            $req_mdp=$cnx->prepare("UPDATE equipes SET mdp = :mdp WHERE id = :equipe");
+                            $req_mdp->bindValue(':mdp',$_POST['motdepasse'],PDO::PARAM_STR);
+                            $req_mdp->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+                            $req_mdp->execute();
+                            echo'Vous venez de modifier le mot de passe de l\'équipe.';
+                            echo'mdp puis equipe : ' . $_POST['motdepasse'] . ' ' . $idEquipe;
+                        }
+                        elseif($_GET['action']=='supprimer')
+                        {
+                            echo'Euh... Vous voulez <b>vraiment</b> supprimer votre équipe ?';
+                            echo'<br/><a href=equipe.php?action=supprimerConfirmation>Cliquez ici pour supprimer votre équipe</a>';
+                            echo'<br/>';
+                        }
+                        elseif($_GET['action']=='supprimerConfirmation')
+                        {
+                            $req_del=$cnx->prepare("DELETE * FROM inscriptionequipe WHERE idEquipe = :equipe ");
+                            $req_del->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+                            $req_del=$cnx->prepare("DELETE * FROM equipes WHERE id = :equipe ");
+                            $req_del->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+                            echo'Votre équipe a été supprimée';
+                        }
+                        else
+                        {
+                            echo "Merci de remplir tous les champs";
+                        }
+                    //Le message s'affiche quoi qu'il arrive
+                    echo"<br/><a href='equipe.php'>Cliquez ici pour revenir à l'espace membre </a>";
+                    }
+                    else //Si aucun formulaire n'a été rempli on arrive sur les options
+                    { ?>
+                        <p>
+                          <form method="post" target="page" action="equipe.php?action=mdp">
+                                <table style="margin: 0 auto;">
+                                    <tr>
+                                        <td>Mot de passe :</td>
+                                        <td>
+                                            <input type="text" name='motdepasse' placeholder='<?php echo $mdpEquipe ?>' required style="margin-top: 5px;"/>
+                                        </td>
+                                        <td><input type="submit" value="Valider" required style="margin-top: 5px;"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Pour supprimer l'équipe, <a href="equipe.php?action=supprimer">cliquez ici</a></td>
+
+                                    </tr>
+                                </table>
+                            </form>
+
+                        </p>
+                    <?php
+                    }
+                    ?>
+
+
                     </div>
                 </div> <!-- Fin Droite -->
 
