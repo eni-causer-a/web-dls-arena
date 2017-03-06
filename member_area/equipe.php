@@ -185,7 +185,6 @@ session_start();
                             $req_mdp->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
                             $req_mdp->execute();
                             echo'Vous venez de modifier le mot de passe de l\'équipe.';
-                            echo'mdp puis equipe : ' . $_POST['motdepasse'] . ' ' . $idEquipe;
                         }
                         elseif($_GET['action']=='supprimer')
                         {
@@ -195,10 +194,12 @@ session_start();
                         }
                         elseif($_GET['action']=='supprimerConfirmation')
                         {
-                            $req_del=$cnx->prepare("DELETE * FROM inscriptionequipe WHERE idEquipe = :equipe ");
+                            $req_del=$cnx->prepare("DELETE FROM inscriptionequipe WHERE idEquipe = :equipe ");
                             $req_del->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
-                            $req_del=$cnx->prepare("DELETE * FROM equipes WHERE id = :equipe ");
+                            $req_del->execute();
+                            $req_del=$cnx->prepare("DELETE FROM equipes WHERE id = :equipe ");
                             $req_del->bindValue(':equipe',$idEquipe,PDO::PARAM_STR);
+                            $req_del->execute();
                             echo'Votre équipe a été supprimée';
                         }
                         else
