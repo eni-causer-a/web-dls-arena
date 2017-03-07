@@ -15,7 +15,7 @@
             $req_pre3->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
             $ok = $req_pre3->execute();
             $_SESSION['pseudo'] = $_POST['pseudo'];
-
+            $_SESSION['res'] = "Modification réussite";
 
 
             ?>
@@ -75,7 +75,7 @@
         if ( $_SESSION['connect'] == true ) // si l'utilisateur est confirmé, on affiche l'espace membre.
         { ?>
             <section id="section-services" class="section pad-bot30 bg-white" style=" padding: 30px;">
-		<div class="container" style="margin: auto;width: 100px;height: 100%;" >
+		<div class="container" style="margin: auto;width: 400px;height: 100%;" >
 
 
 
@@ -102,13 +102,13 @@
         <form method="post" target="page" action="profil.php?action=modification" >
             <table>
                 <tr>
-                    <td>Nom :</td>
+                    <td class="test" >Nom :</td>
                     <td>
                         <input type="text" name='nom' required style="margin-top: 5px;" value="<?php echo $getinfo->nom; ?>" pattern=".{2,}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Prénom :</td>
+                    <td style="width:1000px">Prénom :</td>
                     <td>
                         <input type="text" name='prenom' required style="margin-top: 5px;" value="<?php echo $getinfo->prenom; ?>" pattern=".{2,}" />
                     </td>
@@ -140,7 +140,7 @@
                 <tr>
                     <td>Email : </td>
                     <td>
-                        <input type="email" name='email' required style="margin-top: 5px;" value="<?php echo $getinfo->email; ?>" />
+                        <input type="email" name='email' required style="margin-top: 5px;width:300px;"  value="<?php echo $getinfo->email; ?>" />
                     </td>
                 </tr>
                 <tr>
@@ -148,10 +148,19 @@
                     <td>
                         <input type="submit" value="Modifier" required style="margin-top: 5px;"/>
                     </td>
-                    <td>
+                    </tr>
+                    <tr><?php
+                        if (isset ($_GET['action'])) {
+	                       if ( $_GET['action'] == 'modification' ) {
+                               ?> <a href="./accueil.php"> <?php echo  $_SESSION['res'].", retour vers le menu"; ?></a><?php
+                           }
+                        }
 
-                    </td>
-                </tr>
+                      ?>
+                    </tr  **
+
+                    >
+
             </table>
         </form>
 
