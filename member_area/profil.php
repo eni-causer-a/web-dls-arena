@@ -6,18 +6,16 @@
 	if ( $_GET['action'] == 'modification' ) {
 		// après validation des champs
 
-            $req_pre = $cnx->prepare("UPDATE utilisateurs SET nom = ':nom', prenom= ':prenom', pseudo= ':pseudo', classe= ':classe', email= ':email' WHERE pseudo = ':pseudoB'");
-            $req_pre->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
-               $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
-            $req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
-            $req_pre->bindValue(':pseudoB', $_SESSION['pseudo'] , PDO::PARAM_STR);
-            $req_pre->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
-            $req_pre->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
+            $req_pre3 = $cnx->prepare("UPDATE utilisateurs SET nom = :nom, prenom= :prenom, pseudo= :pseudo, classe= :classe, email= :email WHERE pseudo = :pseudoB;");
+            $req_pre3->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
+            $req_pre3->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
+            $req_pre3->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
+            $req_pre3->bindValue(':pseudoB', $_SESSION['pseudo'] , PDO::PARAM_STR);
+            $req_pre3->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
+            $req_pre3->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
+            $ok = $req_pre3->execute();
+            $_SESSION['pseudo'] = $_POST['pseudo'];
 
-            $req_pre->execute();
-
-            $_SESSION['err_ins'] = "Modification effectué";
-            $req_pre->closeCursor();
             ?>
             <!--<meta http-equiv="refresh" content="0 ; url=index.php"> -->
 
