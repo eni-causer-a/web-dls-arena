@@ -16,6 +16,8 @@
             $ok = $req_pre3->execute();
             $_SESSION['pseudo'] = $_POST['pseudo'];
 
+
+
             ?>
             <!--<meta http-equiv="refresh" content="0 ; url=index.php"> -->
 
@@ -72,10 +74,10 @@
     {
         if ( $_SESSION['connect'] == true ) // si l'utilisateur est confirmé, on affiche l'espace membre.
         { ?>
-            <section id="section-services" class="section pad-bot30 bg-white">
-		<div class="container" style="height:100%">
+            <section id="section-services" class="section pad-bot30 bg-white" style=" padding: 30px;">
+		<div class="container" style="margin: auto;width: 100px;height: 100%;" >
 
-			<div class="row mar-bot40" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
+
 
 		<?php
 
@@ -97,7 +99,7 @@
 
         ?>
 
-        <form method="post" target="page" action="profil.php?action=modification">
+        <form method="post" target="page" action="profil.php?action=modification" >
             <table>
                 <tr>
                     <td>Nom :</td>
@@ -146,13 +148,16 @@
                     <td>
                         <input type="submit" value="Modifier" required style="margin-top: 5px;"/>
                     </td>
+                    <td>
+
+                    </td>
                 </tr>
             </table>
         </form>
 
 
 
-			</div>
+
         </div>
     </section>
     <?php include("../footer.php"); ?>
