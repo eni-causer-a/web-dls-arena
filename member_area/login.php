@@ -54,7 +54,7 @@ if (isset ($_GET['action'])) {
 		?>
 		<html>
 		<head>
-			<meta http-equiv="refresh" target="page" content="0 ; url=../index.php" target="page">
+			<meta http-equiv="refresh" content="0 ; url=../index.php" target="page">
 		</head>
 		<body>
 		</body>
