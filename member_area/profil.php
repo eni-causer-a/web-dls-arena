@@ -6,16 +6,16 @@
 	if ( $_GET['action'] == 'modification' ) {
 		// après validation des champs
 
-            $req_pre3 = $cnx->prepare("UPDATE utilisateurs SET nom = :nom, prenom= :prenom, pseudo= :pseudo, classe= :classe, email= :email WHERE pseudo = :pseudoB;");
+            $req_pre3 = $cnx->prepare("UPDATE utilisateurs SET nom = :nom, prenom= :prenom, pseudo= :pseudo, email= :email WHERE pseudo = :pseudoB;");
             $req_pre3->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
             $req_pre3->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
             $req_pre3->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
             $req_pre3->bindValue(':pseudoB', $_SESSION['pseudo'] , PDO::PARAM_STR);
-            $req_pre3->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
+
             $req_pre3->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
             $ok = $req_pre3->execute();
             $_SESSION['pseudo'] = $_POST['pseudo'];
-            $_SESSION['res'] = "Modification réussite";
+            $_SESSION['res'] = "Modification réussie";
 
 
             ?>
@@ -117,24 +117,6 @@
                     <td>Pseudo :</td>
                     <td>
                         <input type="text" name='pseudo' required style="margin-top: 5px;" value="<?php echo $getinfo->pseudo; ?>" pattern=".{2,}" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Classe :</td>
-                    <td>
-                        <select name="classe" style="margin-top: 5px;">
-                            <option value="SIO1">SIO1</option>
-                            <option value="SIO2">SIO2</option>
-                            <option value="ASS1">ASS1</option>
-                            <option value="ASS2">ASS2</option>
-                            <option value="MUC1">MUC1</option>
-                            <option value="MUC2">MUC2</option>
-                            <option value="DCG1">DCG1</option>
-                            <option value="DCG2">DCG2</option>
-                            <option value="DCG3">DCG3</option>
-                            <option value="NRC1">NRC1</option>
-                            <option value="NRC2">NRC2</option>
-                        </select>
                     </td>
                 </tr>
                 <tr>
