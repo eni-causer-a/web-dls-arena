@@ -6,10 +6,11 @@
 	if ( $_GET['action'] == 'modification' ) {
 		// après validation des champs
 
-            $req_pre = $cnx->prepare("UPDATE utilisateurs SET nom = :nom, prenom= :prenom, pseudo= :pseudo, classe= :classe, email= :email");
+            $req_pre = $cnx->prepare("UPDATE utilisateurs SET nom = ':nom', prenom= ':prenom', pseudo= ':pseudo', classe= ':classe', email= ':email' WHERE pseudo = ':pseudoB'");
             $req_pre->bindValue(':nom', $_POST['nom'] , PDO::PARAM_STR);
-            $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
+               $req_pre->bindValue(':prenom', $_POST['prenom'] , PDO::PARAM_STR);
             $req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
+            $req_pre->bindValue(':pseudoB', $_SESSION['pseudo'] , PDO::PARAM_STR);
             $req_pre->bindValue(':classe', $_POST['classe'] , PDO::PARAM_STR);
             $req_pre->bindValue(':email', $_POST['email'] , PDO::PARAM_STR);
 
@@ -18,7 +19,7 @@
             $_SESSION['err_ins'] = "Modification effectué";
             $req_pre->closeCursor();
             ?>
-            <meta http-equiv="refresh" content="0 ; url=index.php">
+            <!--<meta http-equiv="refresh" content="0 ; url=index.php"> -->
 
 
     <?php
@@ -76,7 +77,7 @@
             <section id="section-services" class="section pad-bot30 bg-white">
 		<div class="container" style="height:100%">
 
-			<div class="row mar-bot40" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;>
+			<div class="row mar-bot40" style="background-color:#dcdcdc;padding:50px;margin:50px;border-radius:32px;">
 
 		<?php
 
@@ -95,9 +96,10 @@
 
 
 
+
         ?>
 
-        <form  action="profil.php?action=modification">
+        <form method="post" target="page" action="profil.php?action=modification">
             <table>
                 <tr>
                     <td>Nom :</td>
