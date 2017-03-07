@@ -103,7 +103,7 @@ if ( $_GET['action'] == 'sendidee' ) {
 				            <img src="./img/csgologo.jpg" height="65px"/>
                             <br/>
 				            <p>Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d'équipe.</p>
-                            Nombre de joueurs par équipe: 1<br/>
+                            Nombre de joueurs par équipe: 5<br/>
 
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->
@@ -116,10 +116,10 @@ if ( $_GET['action'] == 'sendidee' ) {
 
 				<div class="col-lg-6" >
 					<div class="align-center">
-                            <img src="img/battleriteLogo.png" height="65px"/>
+                            <img src="img/curveLogo.png" height="65px"/>
                             <br/>
-                            <p>BATTLERITE est un jeu de combat par équipe dans une arène ce jouant à deux contre deux.</p>
-                            Nombre de joueurs par équipe: 2<br/>
+                            <p>Curve Fever est un genre de snake en multijoueur.</p>
+                            Nombre de joueurs par équipe: 1<br/>
 
                             <br/>
                         <button class="btn" disabled="disabled">Arbre du tournoi</button> <!-- //Bouton -->

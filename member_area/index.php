@@ -66,7 +66,6 @@ session_start();
                                 <div class="align-center">
                                    <h2>Connexion</h2>
                                     <?php include ('login.php'); ?>
-                           <p><a href="sessiontest.php">Simuler une connexion</a></p>
                                 </div>
                             </div>
                             <!-- Inscription -->
