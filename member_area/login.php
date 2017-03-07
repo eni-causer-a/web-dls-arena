@@ -39,7 +39,7 @@ if (isset ($_GET['action'])) {
 			?>
 			<html>
 			<head>
-				<meta http-equiv="refresh" content="0 ; url=accueil.php">
+				<meta http-equiv="refresh" target="page" content="0 ; url=accueil.php">
 			</head>
 			<body>
 			</body>
