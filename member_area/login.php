@@ -19,7 +19,7 @@ if (isset ($_GET['action'])) {
 			include("../include/_inc_connexion.php");
 
 			// préparation de la requête : recherche de l'utilisateur
-			$req_pre = $cnx->prepare("SELECT mdp FROM utilisateurs WHERE pseudo = :pseudo");
+			$req_pre = $cnx->prepare("SELECT mdp,id FROM utilisateurs WHERE pseudo = :pseudo");
 			// liaison de la variable à la requête préparée
 			$req_pre->bindValue(':pseudo', $_POST['pseudo'] , PDO::PARAM_STR);
 			$req_pre->execute();
@@ -27,12 +27,14 @@ if (isset ($_GET['action'])) {
 			$ligne=$req_pre->fetch(PDO::FETCH_OBJ);
 			// récupération du mot de passe
 			$mdp = $ligne->mdp;
+            $id = $ligne->id;
 
 			// fermeture du curseur associé à un jeu de résultats
 			$req_pre->closeCursor();
 
 			$_SESSION['connect'] = $mdp == sha1($_POST['password']);
 			$_SESSION['pseudo'] = $_POST['pseudo'];
+            $_SESSION['id'] = $id;
 
 			?>
 			<html>
@@ -52,7 +54,7 @@ if (isset ($_GET['action'])) {
 		?>
 		<html>
 		<head>
-			<meta http-equiv="refresh" content="0 ; url=../index.php" target="page">
+			<meta http-equiv="refresh" target="page" content="0 ; url=../index.php" target="page">
 		</head>
 		<body>
 		</body>
