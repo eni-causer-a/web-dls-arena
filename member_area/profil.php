@@ -94,9 +94,6 @@
 
 
 
-
-
-
         ?>
 
         <form method="post" target="page" action="profil.php?action=modification" >
