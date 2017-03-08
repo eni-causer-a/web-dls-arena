@@ -33,7 +33,6 @@ if (isset ($_GET['action'])) {
             $req_pre->closeCursor();
             ?>
             <meta http-equiv="refresh" content="0 ; url=index.php">
-
     <?php
         }
     }
