@@ -34,7 +34,6 @@ if (isset ($_GET['action'])) {
             ?>
             <meta http-equiv="refresh" content="0 ; url=index.php">
 
-
     <?php
         }
     }
